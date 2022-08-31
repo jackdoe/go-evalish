@@ -14,7 +14,6 @@ import (
 )
 
 func main() {
-	dir := "/tmp"
 
 	code := `
 package main
@@ -23,9 +22,9 @@ func Sum(a int,b int) int {
     return a + b
 }
 `
- 
+
 	// compile the .so
-	plug := evalish.CompileP(code, dir, "go")
+	plug := evalish.CompileP(code, "/tmp", "go")
 
 	// get the function
 	f := evalish.LookupP(plug, "Sum").(func(int, int) int)

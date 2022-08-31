@@ -22,7 +22,8 @@ package main
 func Sum(a int,b int) int {
     return a + b
 }
-    `
+`
+ 
 	// compile the .so
 	plug := evalish.CompileP(code, dir, "go")
 

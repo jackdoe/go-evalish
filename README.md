@@ -36,3 +36,11 @@ func Sum(a int,b int) int {
 }
 
 ```
+
+
+
+FIXME: it does not work on windoes as [plugin](https://pkg.go.dev/plugin) does not work on windows.
+
+```
+Currently plugins are only supported on Linux, FreeBSD, and macOS.
+```

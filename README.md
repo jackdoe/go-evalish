@@ -5,22 +5,33 @@ Example usage:
 
 
 ```
-dir := "/tmp"
-
-code := `
 package main
 
+import (
+	"fmt"
+
+	"github.com/jackdoe/go-evalish"
+)
+
+func main() {
+	dir := "/tmp"
+
+	code := `
+package main
+    
 func Sum(a int,b int) int {
     return a + b
 }
-`
-// compile the .so
-plug := evalish.CompileP(code, dir, "go")
-    
-// get the function
-f := evalish.LookupP(plug, "Sum").(func(int, int) int)
+    `
+	// compile the .so
+	plug := evalish.CompileP(code, dir, "go")
 
-// use the function
-sum := f(5,6)
+	// get the function
+	f := evalish.LookupP(plug, "Sum").(func(int, int) int)
+
+	// use the function
+	sum := f(5, 6)
+	fmt.Printf("%d", sum)
+}
 
 ```

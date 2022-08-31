@@ -5,22 +5,22 @@ Example usage:
 
 
 ```
-    dir := "/tmp"
+dir := "/tmp"
 
-	code := `
+code := `
 package main
 
 func Sum(a int,b int) int {
     return a + b
 }
 `
-    // compile the .so
-    plug := evalish.CompileP(code, dir, "go")
+// compile the .so
+plug := evalish.CompileP(code, dir, "go")
     
-    // get the function
-	f := evalish.LookupP(plug, "Sum").(func(int, int) int)
+// get the function
+f := evalish.LookupP(plug, "Sum").(func(int, int) int)
 
-    // use the function
-    sum := f(5,6)
+// use the function
+sum := f(5,6)
 
 ```
